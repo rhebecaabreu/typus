@@ -1,5 +1,4 @@
-module Admin::Resources
-  class RelationshipsHelper
+module Admin::Resources::RelationshipsHelper
 
     def setup_relationship(field)
       @field = field
