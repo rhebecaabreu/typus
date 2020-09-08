@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 # Use SCSS for stylesheets
-gem 'sass-rails'
+#gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
