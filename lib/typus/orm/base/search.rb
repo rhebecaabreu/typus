@@ -61,7 +61,7 @@ module Typus
         def build_my_joins(params)
           query_params = params.dup
           query_params.reject! { |k, _| !model_relationships.keys.include?(k.to_sym) }
-          query_params.reject(&:blank?).map { |k, _| k.to_sym }
+          query_params.reject(&:blank?).each { |k, _| k.to_sym }
         end
 
       end
