@@ -215,7 +215,7 @@ class Admin::ResourcesController < Admin::BaseController
                 I18n.t('typus.flash.update_success', model: @resource.model_name.human)
               end
 
-    path = path.merge!(options).compact.to_hash
+    path = path.merge!(options).to_h.compact
     redirect_to path, notice: notice
   end
 
