@@ -31,8 +31,8 @@ gem 'mysql2'
 
 # Typus can manage lists, trees, trashes, so we want to enable this stuff
 # on the demo.
-gem 'acts_as_list', github: 'typus/acts_as_list'
-gem 'acts_as_tree'
+# gem 'acts_as_list', github: 'typus/acts_as_list'
+# gem 'acts_as_tree'
 gem 'rails-permalink'
 #gem 'rails-trash', github: 'fesplugas/rails-trash'
 
