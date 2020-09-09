@@ -27,7 +27,7 @@ gem 'jbuilder'
 #$gem 'pg'
 gem 'mysql2'
 
-gem 'activesupport'
+#gem 'activesupport'
 
 # Typus can manage lists, trees, trashes, so we want to enable this stuff
 # on the demo.
