@@ -31,13 +31,15 @@ gem 'mysql2'
 
 # Typus can manage lists, trees, trashes, so we want to enable this stuff
 # on the demo.
-# gem 'acts_as_list', github: 'typus/acts_as_list'
-# gem 'acts_as_tree'
+gem 'acts_as_list', github: 'typus/acts_as_list'
+gem 'acts_as_tree'
 gem 'rails-permalink'
 #gem 'rails-trash', github: 'fesplugas/rails-trash'
+gem 'rails-trash', :github => 'trilogyinteractive/rails-trash'
 
 # Rich Text Editor
-#gem 'ckeditor-rails', github: 'fesplugas/rails-ckeditor'
+#gem 'ckeditor-rails'
+gem 'ckeditor_rails'
 
 # Alternative authentication
 gem 'devise'
