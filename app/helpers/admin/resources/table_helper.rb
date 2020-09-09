@@ -32,7 +32,7 @@ module Admin::Resources::TableHelper
 
           switch = "<span class='#{sort_order.last}'><span class='caret'></span></span>" if params[:order_by].eql?(order_by)
           options = { order_by: order_by, sort_order: sort_order.first }
-          message = [content, switch].compact.join(' ').html_safe
+          message = [content, switch].reject(&:blank?).join(' ').html_safe
           content = link_to(message, params.merge(options))
         end
       end
