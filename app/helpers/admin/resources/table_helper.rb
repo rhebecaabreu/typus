@@ -1,4 +1,4 @@
-module Admin::Resources::TableHelper
+                                      module Admin::Resources::TableHelper
 
   def build_table(model, fields, items, link_options = {}, association = nil, association_name = nil)
     locals = {
@@ -33,7 +33,7 @@ module Admin::Resources::TableHelper
           switch = "<span class='#{sort_order.last}'><span class='caret'></span></span>" if params[:order_by].eql?(order_by)
           options = { order_by: order_by, sort_order: sort_order.first }
           message = [content, switch].reject(&:blank?).join(' ').html_safe
-          content = link_to(message, params.merge(options))
+          content = link_to(message, params.to_unsafe_h.merge(options))
         end
       end
 
