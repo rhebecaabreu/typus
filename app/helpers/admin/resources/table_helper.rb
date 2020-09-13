@@ -60,7 +60,7 @@
 
       {
         message: t(body),
-        url: params.dup.cleanup.merge({controller: "/admin/#{model.to_resource}", id: item.id}).merge(url),
+        url: params.merge({controller: "/admin/#{model.to_resource}", id: item.id}).merge(url),
         options: options,
       }
     end.compact
