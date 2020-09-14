@@ -55,12 +55,12 @@
 
       # Hack to fix options URL
       if options && options['data-toggle']
-        options[:url] = url_for(controller: "/admin/#{model.to_resource}", action: url[:action], id: item.id, _popup: true)
+        options[:url] = url_for(controller: "/admin/#{model.name}", action: url[:action], id: item.id, _popup: true)
       end
 
       {
         message: t(body),
-        url: params.dup.merge({controller: "/admin/#{model.to_resource}", id: item.id}).merge(url),
+        url: params.dup.merge({controller: "/admin/#{model.name}", id: item.id}).merge(url),
         options: options,
       }
     end.compact
