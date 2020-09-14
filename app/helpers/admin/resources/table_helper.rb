@@ -60,8 +60,8 @@
 
       {
         message: t(body),
-        url: params.dup.merge({controller: "/admin/#{model.name}", id: item.id}).merge(url),
-        options: options,
+        url: params.dup.merge({controller: "/admin/#{model.name}", id: item.id}).merge(url).to_enum.to_h,
+        options: options.to_enum.to_h,
       }
     end.compact
   end
