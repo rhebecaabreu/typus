@@ -1,6 +1,6 @@
 <!-- List of all available models -->
 
-<h2><%= t("typus.dashboard.users") %> <%= Typus.user_class.count %></h2>
+<h2><%= t("typus.dashboard.users") %> <%= Typus.class.count %></h2>
 
 <table class="table">
 
@@ -12,7 +12,7 @@
     </tr>
   </thead>
 
-  <% Typus.user_class.limit(5).each do |user| %>
+  <% Typus.class.limit(5).each do |user| %>
     <tr>
       <td><%= user.email %></td>
       <td><%= user.status %></td>

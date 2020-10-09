@@ -30,7 +30,7 @@ class Admin::BaseController < ActionController::Base
   end
 
   def zero_users
-    Typus.user_class.count.zero?
+    Typus.class.count.zero?
   end
 
   def not_allowed(reason = 'Not allowed!')
@@ -38,7 +38,7 @@ class Admin::BaseController < ActionController::Base
   end
 
   def admin_user_params
-    params[Typus.user_class_as_symbol]
+    params[Typus.class.name.to_sym]
   end
 
 end

@@ -36,7 +36,7 @@ class Admin::SessionController < Admin::BaseController
   end
 
   def user_scope
-    klass = Typus.user_class
+    klass = Typus.class
     klass.respond_to?(:in_domain) ? klass.in_domain(request.host) : klass
   end
 

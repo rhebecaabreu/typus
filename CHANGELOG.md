@@ -58,7 +58,7 @@
 
  * [CHANGED] `TypusClass#to_label` now returns the email.
 
- * [CHANGED] Session and account forms are now using `Typus.user_class`.
+ * [CHANGED] Session and account forms are now using `Typus.class`.
 
  * [CHANGED] Extracted `account` and `session` forms into a partial.
 

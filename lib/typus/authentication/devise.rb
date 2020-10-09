@@ -7,11 +7,11 @@ module Typus
       include Base
 
       def admin_user
-        send("current_#{Typus.user_class_name.underscore}")
+        send("current_#{Typus.class.name.underscore}")
       end
 
       def authenticate
-        send("authenticate_#{Typus.user_class_name.underscore}!")
+        send("authenticate_#{Typus.class.name.underscore}!")
       end
 
     end

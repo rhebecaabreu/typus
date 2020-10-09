@@ -82,11 +82,11 @@ class TypusTest < ActiveSupport::TestCase
   end
 
   test 'user_class returns default value' do
-    assert_equal TypusUser, Typus.user_class
+    assert_equal TypusUser, Typus.class
   end
 
   test 'user_class_name returns default value' do
-    assert Typus.user_class_name.eql?('TypusUser')
+    assert Typus.class.name.eql?('TypusUser')
   end
 
   test 'user_class_name setter presence' do

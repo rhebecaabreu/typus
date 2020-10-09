@@ -23,7 +23,7 @@ module Typus
       # admin_user will be signed out from the system.
       #++
       def admin_user
-        @admin_user ||= Typus.user_class.find_by_id(session[:typus_user_id])
+        @admin_user ||= Typus.class.find_by_id(session[:typus_user_id])
       end
 
       #--
@@ -31,7 +31,7 @@ module Typus
       # It works on models, so its available on the `resources_controller`.
       #++
       def check_if_user_can_perform_action_on_resources
-        if @item && @item.is_a?(Typus.user_class)
+        if @item && @item.is_a?(Typus.class)
           check_if_user_can_perform_action_on_user
         else
           not_allowed if admin_user.cannot?(action_name, @resource.model_name)

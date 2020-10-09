@@ -11,7 +11,7 @@ class Admin::AccountController < Admin::BaseController
   end
 
   def create
-    user = Typus.user_class.generate(email: admin_user_params[:email])
+    user = Typus.class.generate(email: admin_user_params[:email])
     redirect_to user ? { action: 'show', id: user.token } : { action: :new }
   end
 
@@ -19,7 +19,7 @@ class Admin::AccountController < Admin::BaseController
   end
 
   def send_password
-    if user = Typus.user_class.find_by_email(admin_user_params[:email])
+    if user = Typus.class.find_by_email(admin_user_params[:email])
       Admin::Mailer.reset_password_instructions(user, request.host_with_port).deliver_later
       redirect_to new_admin_session_path, notice: I18n.t('typus.flash.password_reset_email_success')
     else
@@ -29,9 +29,9 @@ class Admin::AccountController < Admin::BaseController
 
   def show
     flash[:notice] = I18n.t('typus.flash.set_new_password')
-    typus_user = Typus.user_class.find_by_token!(params[:id])
+    typus_user = Typus.class.find_by_token!(params[:id])
     session[:typus_user_id] = typus_user.id
-    redirect_to params[:return_to] || { controller: "/admin/#{Typus.user_class.to_resource}", action: 'edit', id: typus_user.id }
+    redirect_to params[:return_to] || { controller: "/admin/#{Typus.class.to_resource}", action: 'edit', id: typus_user.id }
   end
 
   private

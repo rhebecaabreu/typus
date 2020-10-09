@@ -4,11 +4,11 @@
 
 <%= admin_display_flash_message %>
 
-<% label = Typus.user_class.human_attribute_name(:email) %>
+<% label = Typus.class.human_attribute_name(:email) %>
 <%= form.text_field :email, placeholder: label, class: 'form-control', autofocus: 'autofocus' %>
 
 <% if controller.controller_name == 'session' %>
-  <% label = Typus.user_class.human_attribute_name(:password) %>
+  <% label = Typus.class.human_attribute_name(:password) %>
   <%= form.password_field :password, placeholder: label, class: 'form-control' %>
 <% end %>
 
