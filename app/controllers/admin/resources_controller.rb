@@ -217,7 +217,7 @@ class Admin::ResourcesController < Admin::BaseController
 
   # Hack for TypusUser edits.
   def bypass_save_button_action
-    (@item.is_a?(Typus.user_class) && admin_user.is_not_root?) && params[:_save]
+    (@item.is_a?(Typus.class) && admin_user.is_not_root?) && params[:_save]
   end
 
   def set_default_action
