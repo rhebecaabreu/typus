@@ -38,6 +38,12 @@ If you are using **Rails 4.0**:
 
     gem "typus", github: "typus/typus", branch: "4-0-stable"
 
+If you are using **Rails 5.0**:
+
+    `gem gem "typus", github: "typus/typus", branch: "5-0-unstable"`
+
+
+
 Update your bundle, run the generator and start the application server:
 
     bundle install
